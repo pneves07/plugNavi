@@ -1,0 +1,7 @@
+{
+  "name": "plugNavi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
