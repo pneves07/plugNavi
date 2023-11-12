@@ -1,13 +1,45 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>
+      Iniciar Sessão
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+
+  <div class="user-info">
+    <ion-avatar>
+      <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="Foto do Perfil">
+    </ion-avatar>
+  </div>
+
+
+  <!-- Avatar e Inputs -->
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-align-items-center ion-justify-content-center" style="height: 100%;">
+      <ion-col size="12" size-md="6" class="ion-text-center">
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <!--[(ngModel)]="user.email em baixo no input-->
+          <ion-input type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <!--[(ngModel)]="user.password em baixo no input-->
+          <ion-input type="password"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row style="margin-top: 5%;">
+      <ion-fab horizontal="center">
+        <ion-fab-button>
+          <ion-icon name="logo-google"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-row>
+  </ion-grid>
+
+
+
 </ion-content>

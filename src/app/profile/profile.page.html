@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Perfil
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Seção de Informações do Usuário -->
+  <div class="user-info">
+    <ion-avatar>
+      <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="Foto do Perfil">
+    </ion-avatar>
+    <ion-label>
+      <h2>Convidado</h2>
+      <p>convidado@gmail.com</p>
+    </ion-label>
+  </div>
+
+  <!-- Detalhes do Perfil -->
+  <ion-card>
+    <ion-card-header>
+      Detalhes do Perfil
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-icon name="person" slot="start"></ion-icon>
+          <ion-label>convidado</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="mail" slot="start"></ion-icon>
+          <ion-label>convidado@gmail.com</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="call" slot="start"></ion-icon>
+          <ion-label>910000000</ion-label>
+        </ion-item>
+        <!-- Adicione mais detalhes conforme necessário -->
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
