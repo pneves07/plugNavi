@@ -28,6 +28,7 @@
     "@capacitor/keyboard": "5.0.6",
     "@capacitor/status-bar": "5.0.6",
     "@ionic/angular": "^7.0.0",
+    "@mapbox/mapbox-gl-geocoder": "^5.0.1",
     "@types/mapbox__mapbox-gl-geocoder": "^4.7.7",
     "ionicons": "^7.0.0",
     "mapbox-gl": "^2.15.0",

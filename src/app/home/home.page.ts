@@ -1,5 +1,7 @@
 import { Component, OnInit,  ViewChild } from '@angular/core';
 import { IonModal } from '@ionic/angular';
+import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+
 
 
 declare var mapboxgl: any;
@@ -38,9 +40,21 @@ export class HomePage implements OnInit {
     this.map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [-0.10153989181986844, 51.497635790108916], // starting position
-      zoom: 14
+      center: [-7.987813, 41.513639],
+      zoom: 14,
     });
+
+    /*
+    this.map.addControl(
+      new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl,
+
+      })
+    );
+    */
+
+
     // // set the bounds of the map
     // const bounds = [
     //   [-123.069003, 45.395273],
@@ -50,14 +64,14 @@ export class HomePage implements OnInit {
 
     // an arbitrary start will always be the same
     // only the end or destination will change
-    this.start = [-0.10153989181986844, 51.497635790108916];
+    this.start = [-7.987813, 41.513639];
 
     // this is where the code for the next step will go
 
     this.map.on('load', () => {
       // make an initial directions request that
       // starts and ends at the same location
-    //  this.getRoute(this.start);
+      this.getRoute(this.start);
 
       // Add starting point to the map
       this.map.addLayer({

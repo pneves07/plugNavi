@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { NavController } from '@ionic/angular'; // Se estiver usando o NavController
-
 
 @Component({
   selector: 'app-root',
@@ -10,6 +7,7 @@ import { NavController } from '@ionic/angular'; // Se estiver usando o NavContro
 })
 export class AppComponent {
   public appPages = [
+    { title: 'Login', url: '/login', icon: 'lock-closed'},
     { title: 'Home', url: '/home', icon: 'home'},
     { title: 'Conta', url: '/profile', icon: 'person'},
     /*{ title: 'Inbox', url: '/folder/inbox', icon: 'mail' },
@@ -23,11 +21,7 @@ export class AppComponent {
 
 
 
-  constructor(private router: Router, private navCtrl: NavController) {}
+  constructor() {}
 
-
-  goToLogin(){
-    this.router.navigate(['/login']);
-  }
 
 }
