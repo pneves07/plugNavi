@@ -1,6 +1,7 @@
 import { Component, OnInit,  ViewChild } from '@angular/core';
 import { IonModal } from '@ionic/angular';
 import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import { Geolocation } from '@capacitor/geolocation';
 
 
 
@@ -25,24 +26,34 @@ export class HomePage implements OnInit {
   steps: Array<any> = []; // Instruction steps
   routeData: any; // Loaded route data
 
+
+  coordenadas: any;
+  latitude: number;
+  longitude: number;
+
   constructor() { }
 
   ngOnInit() {
 
   }
 
+
   ionViewDidEnter() {
     this.loadMap();
   }
 
-  loadMap() {
+  loadMap = async () => {
+
+    this.coordenadas = await Geolocation.getCurrentPosition();
+
     mapboxgl.accessToken = 'pk.eyJ1IjoiYXBwbGRzMjAyMyIsImEiOiJjbG54ZHN0eGUwZXhqMnJsZWQwdjQ2eGo3In0.sjYUyiQqmHivuVPw14GH5g';
     this.map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [-7.987813, 41.513639],
-      zoom: 14,
+      center: [this.coordenadas.coords.longitude, this.coordenadas.coords.latitude],
+      zoom: 15,
     });
+
 
     /*
     this.map.addControl(
@@ -64,7 +75,7 @@ export class HomePage implements OnInit {
 
     // an arbitrary start will always be the same
     // only the end or destination will change
-    this.start = [-7.987813, 41.513639];
+    this.start = [this.coordenadas.coords.longitude, this.coordenadas.coords.latitude];
 
     // this is where the code for the next step will go
 
@@ -256,4 +267,6 @@ export class HomePage implements OnInit {
       this.openModal = false;
     });
   }
+
+
 }
